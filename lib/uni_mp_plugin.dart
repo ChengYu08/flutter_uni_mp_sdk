@@ -1,4 +1,4 @@
-library uni_mp_sdk_plugin;
+library uniMpSdkPlugin;
 
 export 'src/uni_app.dart';
 export 'src/uni_manager.dart';

@@ -88,13 +88,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_uni_mp_sdk:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
   fuchsia_remote_debug_protocol:
     dependency: transitive
     description: flutter
@@ -238,6 +231,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.5.1"
+  uni_mp_sdk_plugin:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1"
   vector_math:
     dependency: transitive
     description:
@@ -264,4 +264,3 @@ packages:
     version: "3.0.2"
 sdks:
   dart: ">=3.0.0 <4.0.0"
-  flutter: ">=3.3.0"

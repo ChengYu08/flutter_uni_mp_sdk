@@ -16,8 +16,18 @@ uniapp 小程序sdk插件
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
+  s.static_framework = true
+  s.vendored_frameworks = 'UniMPSDK/Core/*.framework'
+
+  # 系统framework库
+  s.frameworks = 'JavaScriptCore', 'CoreMedia', 'MediaPlayer', 'AVFoundation', 'AVKit',
+  'AVKit', 'OpenGLES', 'CoreText', 'CoreLocation',
+  'ImageIO', 'CoreMedia', 'CoreMotion', 'QuartzCore', 'CoreGraphics',
+  'QuickLook', 'CoreTelephony', 'MobileCoreServices', 'AdSupport'
+  # 系统C库              
+  s.libraries = "libc++","libiconv"
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64' }
   s.swift_version = '5.0'
 end

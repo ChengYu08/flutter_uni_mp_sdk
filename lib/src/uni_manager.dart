@@ -33,7 +33,8 @@ class UniManager {
     });
   }
 
-  Future init() {
-    return channel.invokeMethod('init', _buildParam({}));
+  // 打开小程序
+  Future open(String appID) {
+    return channel.invokeMethod('open', _buildParam({"AppID": appID}));
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_uni_mp_sdk/flutter_uni_mp_sdk.dart';
+import "package:uni_mp_sdk_plugin";
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  final _flutterUniMpSdkPlugin = FlutterUniMpSdk();
 
   @override
   void initState() {
@@ -30,10 +29,7 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await _flutterUniMpSdkPlugin.getPlatformVersion() ?? 'Unknown platform version';
-    } on PlatformException {
+    try {} on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
 
@@ -41,10 +37,6 @@ class _MyAppState extends State<MyApp> {
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override

@@ -1,11 +1,11 @@
-name: flutter_uni_mp_sdk
+name: uni_mp_sdk_plugin
 description: uniapp 小程序sdk插件
 version: 0.0.1
-homepage:
+homepage: "https://github.com/wanglihua-git/uni_mp_sdk_plugin"
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=3.3.0"
+  # flutter: ">=3.3.0"
 
 dependencies:
   flutter:
