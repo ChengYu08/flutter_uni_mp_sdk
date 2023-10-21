@@ -6,9 +6,14 @@ class UniManager {
     _addNativeCallback(channel);
   }
 
+  static Map _buildParam(Map param) {
+    param["uniManager"] = "uniManager";
+    return param;
+  }
+
   // 处理重原生发回来的信息
-  _addNativeCallback(MethodChannel _channel) {
-    _channel.setMethodCallHandler((call) async {
+  _addNativeCallback(MethodChannel channel) {
+    channel.setMethodCallHandler((call) async {
       try {
         String method = call.method;
         String type = call.arguments['type'];
@@ -26,5 +31,9 @@ class UniManager {
       }
       return Future.value(null);
     });
+  }
+
+  Future init() {
+    return channel.invokeMethod('init', _buildParam({}));
   }
 }
